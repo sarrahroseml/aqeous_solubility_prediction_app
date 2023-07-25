@@ -101,16 +101,8 @@ st.markdown('`Solubility` is defined as the maximum amount of solute that will d
 
 #Regression plot of 98 data points
 def plotting_reg_graph(df, title='Regression plot', xlabel='Predicted value', ylabel='Actual value'): 
-    #Calculate scores
-    try:
         rsme = np.sqrt(mean_squared_error(df['Actual'],df['Predicted']))
         R2 = r2_score(df['Actual'],df['Predicted'])
-    except Exception as e:
-        print("Error in calculating scores: ", e)
-        return
-
-    #Plot figure
-    try:
         sn.regplot(x=df['Predicted'],y=df['Actual'],line_kws={"lw":2,'ls':'--','color':'red','alpha':0.7})
         plt.title(title, color='red')
         plt.xlabel(xlabel, color='blue')
@@ -122,9 +114,6 @@ def plotting_reg_graph(df, title='Regression plot', xlabel='Predicted value', yl
         rsme = mpatches.Patch(label="RMSE={:04.2F}".format(rmse))
         plt.legend(handles=[R2,rsme])
         st.pyplot(plt)
-
-    except Exception as e:
-        print("Error in plotting: ", e)
 
 #Test Data for Figure
 test_set = pd.read_csv('test_98.csv')
