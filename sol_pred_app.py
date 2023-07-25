@@ -205,11 +205,12 @@ elif prediction:
      st.sidebar.markdown(file_download(output, "predicted_logS.csv"))
 else: 
      st.markdown('''
-<div style="border: 2px solid #ff6347; border-radius: 20px; padding: 3%; text-align:center; background-color: #282828; color: #ffffff;">
-    <h3> style="color: #ff6347;"> Test this model now! </h2>
-    <h6> You can use the sidebar to input your molecules. If you have a few molecules, simply put the SMILES in single or double quotations separated by a comma. If you have many molecules, upload them in a "SMILES" column and click the button that says "Predict logS of molecules". </h6>
-    <h6 style="color: #ff6347; background-color: #ff6347; border-radius: 10px; padding: 3%; opacity: 0.9;"> Remember: predictions are more reliable if the compounds to be predicted are similar to those in the training dataset, with logS values ranging between -7.5 and 1.7.</h6>
+<div style="border: 2px solid #ff6347; border-radius: 20px; padding: 2%; text-align:center; background-color: #282828; color: #ffffff;">
+    <h3 style="color: #ff6347;"> Test this model now! </h3>
+    <h6 style="background-color: #ffffff; color: #282828; padding: 1%;"> You can use the sidebar to input your molecules. If you have a few molecules, simply put the SMILES in single or double quotations separated by a comma. If you have many molecules, upload them in a "SMILES" column and click the button that says "Predict logS of molecules". </h6>
+    <h6 style="color: #ffffff; background-color: #ff6347; border-radius: 10px; padding: 2%; opacity: 0.9;"> Remember: predictions are more reliable if the compounds to be predicted are similar to those in the training dataset, with logS values ranging between -7.5 and 1.7.</h6>
 </div>
+
 
 ''', unsafe_allow_html=True)
 
