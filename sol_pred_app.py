@@ -106,6 +106,7 @@ def plotting_reg_graph(df, title='Regression plot', xlabel='Predicted value', yl
     
         rsme = mpatches.Patch(label="RMSE={:04.2F}".format(rsme_value))
         R2 = mpatches.Patch(label="R2={:04.2F}".format(R2_value))
+
         sn.regplot(x=df['Predicted'],y=df['Actual'],line_kws={"lw":2,'ls':'--','color':'red','alpha':0.7})
         plt.title(title, color='red')
         plt.xlabel(xlabel, color='blue')
