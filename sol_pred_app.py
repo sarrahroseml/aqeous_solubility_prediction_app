@@ -180,7 +180,7 @@ st.sidebar.markdown("""**If you uploaded your CSV file, click below to get the s
 prediction = st.sidebar.button("Predict LogS of molecules")
 
 if manual_SMILES != "['CCCCO']":
-     df = pd.DataFrame(eval(manual_SMILES), colums=['SMILES'])
+     df = pd.DataFrame(eval(manual_SMILES), columns=['SMILES'])
      #Calculate 200 mol descriptors using RDkit_descriptors
      Mol_descriptors, desc_names = RDKit_descriptors(df['SMILES'])
      #Create dataframe 
