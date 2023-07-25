@@ -102,19 +102,18 @@ st.markdown('`Solubility` is defined as the maximum amount of solute that will d
 #Regression plot of 98 data points
 #Regression plot of 98 data points
 def plotting_reg_graph(df, title='Regression plot', xlabel='Predicted value', ylabel='Actual value'): 
-    rsme_value = np.sqrt(mean_squared_error(df['Actual'],df['Predicted']))
-    R2_value = r2_score(df['Actual'],df['Predicted'])
-    
-    rsme = mpatches.Patch(label="RMSE={:04.2F}".format(rsme_value))
-    R2 = mpatches.Patch(label="R2={:04.2F}".format(R2_value))
-
-    sn.regplot(x=df['Predicted'],y=df['Actual'],line_kws={"lw":2,'ls':'--','color':'red','alpha':0.7})
-    plt.title(title, color='red')
-    plt.xlabel(xlabel, color='blue')
-    plt.ylabel(ylabel, color='blue')
-    plt.xlim(-8,0.5)
-
-    plt.grid(alpha=0.3)
+        rsme_value = np.sqrt(mean_squared_error(df['Actual'],df['Predicted']))
+        R2_value = r2_score(df['Actual'],df['Predicted'])
+        rsme = mpatches.Patch(label="RMSE={:04.2F}".format(rsme_value))
+        R2 = mpatches.Patch(label="R2={:04.2F}".format(R2_value))
+        sn.regplot(x=df['Predicted'],y=df['Actual'],line_kws={"lw":2,'ls':'--','color':'red','alpha':0.7})
+        plt.title(title, color='red')
+        plt.xlabel(xlabel, color='blue')
+        plt.ylabel(ylabel, color='blue')
+        plt.xlim(-8,0.5)
+        plt.grid(alpha=0.3)
+        plt.legend(handles=[R2,rsme])
+        st.pyplot(plt)
    
 
 
