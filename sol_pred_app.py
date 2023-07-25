@@ -92,7 +92,7 @@ descriptor_columns =  ['MaxEStateIndex', 'MinEStateIndex', 'MaxAbsEStateIndex',
        'fr_thiocyan', 'fr_thiophene', 'fr_unbrch_alkane', 'fr_urea']
 
 #Set text & colour themes
-set.set_page_config(page_title='Aqueous Solubility Prediction App', layout='wide')
+st.set_page_config(page_title='Aqueous Solubility Prediction App', layout='wide')
 
 st.sidebar.markdown('<h2 style="color:#0D47A1;background-color:#B2EBF2;border-radius:10px;text-align:center"> Input compounds here for Solubility Prediction </h2>', unsafe_allow_html=True)
 
