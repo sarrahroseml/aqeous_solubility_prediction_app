@@ -4,4 +4,5 @@ This is a project to create a webapp that can predict the aqeous solubility of d
 
 Insert explanation. 
 
-Credits to: 
+This is a replication of a tutorial by Dr Gashaw M. Goshu. 
+
