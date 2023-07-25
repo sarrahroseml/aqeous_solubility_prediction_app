@@ -25,22 +25,21 @@ with open('scaler.pkl','rb') as f:
         scaler = pickle.load(f)
 
 #200 Molecular Descriptors calculated for each molecule
-""""
-Physicochemical properties: Physical & chemical properties of the molecules. E.g.'MolWt' (molecular weight), 'HeavyAtomMolWt' (total weight of heavy atoms in mol), 'ExactMolWt' (exact mol weight), 'NumValenceElectrons' (number of valence e), and 'MolLogP' (log of partition coefficient between n-octanol and water).
 
-EState indices: Electrotopological state indices, which combine electronic (charge) information and topological (structure) information. They include 'MaxEStateIndex', 'MinEStateIndex', 'MaxAbsEStateIndex', and 'MinAbsEStateIndex'.
+#Physicochemical properties: Physical & chemical properties of the molecules. E.g.'MolWt' (molecular weight), 'HeavyAtomMolWt' (total weight of heavy atoms in mol), 'ExactMolWt' (exact mol weight), 'NumValenceElectrons' (number of valence e), and 'MolLogP' (log of partition coefficient between n-octanol and water).
 
-Fingerprint densities: 'FpDensityMorgan1', 'FpDensityMorgan2', and 'FpDensityMorgan3' are Morgan fingerprints of radius 1, 2, and 3, respectively. These are circular topological fingerprints.
+#EState indices: Electrotopological state indices, which combine electronic (charge) information and topological (structure) information. They include 'MaxEStateIndex', 'MinEStateIndex', 'MaxAbsEStateIndex', and 'MinAbsEStateIndex'.
 
-VSA descriptors: These are Volume of Molecular Surface Area descriptors, which are related to the molecular surface area portioned according to certain properties. They include 'PEOE_VSA' (partial equalization of orbital electronegativities volume), 'SMR_VSA' (Van der Waals surface area), and 'SlogP_VSA' (log P weighted surface area).
+#Fingerprint densities: 'FpDensityMorgan1', 'FpDensityMorgan2', and 'FpDensityMorgan3' are Morgan fingerprints of radius 1, 2, and 3, respectively. These are circular topological fingerprints.
 
-Substructure counts: These descriptors count certain structural features or functional groups in the molecule. Examples include 'fr_Al_OH' (number of alcohol groups), 'fr_ether' (number of ether groups), 'fr_amide' (number of amide groups), and 'fr_nitro' (number of nitro groups).
+#VSA descriptors: These are Volume of Molecular Surface Area descriptors, which are related to the molecular surface area portioned according to certain properties. They include 'PEOE_VSA' (partial equalization of orbital electronegativities volume), 'SMR_VSA' (Van der Waals surface area), and 'SlogP_VSA' (log P weighted surface area).
 
-Ring descriptors: These descriptors provide information about the ring systems in the molecule. Examples include 'RingCount', 'NumAromaticRings', 'NumAliphaticRings', etc.
+#Substructure counts: These descriptors count certain structural features or functional groups in the molecule. Examples include 'fr_Al_OH' (number of alcohol groups), 'fr_ether' (number of ether groups), 'fr_amide' (number of amide groups), and 'fr_nitro' (number of nitro groups).
 
-Other descriptors: 'qed' stands for Quantitative Estimate of Drug-likeness, and 'TPSA' is the topological polar surface area.
+#Ring descriptors: These descriptors provide information about the ring systems in the molecule. Examples include 'RingCount', 'NumAromaticRings', 'NumAliphaticRings', etc.
 
-"""""
+#Other descriptors: 'qed' stands for Quantitative Estimate of Drug-likeness, and 'TPSA' is the topological polar surface area.
+
 descriptor_columns =  ['MaxEStateIndex', 'MinEStateIndex', 'MaxAbsEStateIndex',
        'MinAbsEStateIndex', 'qed', 'MolWt', 'HeavyAtomMolWt',
        'ExactMolWt', 'NumValenceElectrons', 'NumRadicalElectrons',
